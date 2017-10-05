@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+let path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +12,17 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.disableNotifications();
+mix.js('node_modules/vue-admin-paper-dashboard/src/main.js', 'public/js/app.js')
+    .sass('node_modules/vue-admin-paper-dashboard/src/assets/sass/paper-dashboard.scss', 'public/css/app.css');
+mix.browserSync(process.env.APP_URL);
+if (mix.inProduction()) {
+    mix.version();
+}
+mix.webpackConfig({
+    resolve: {
+        alias: {
+            'src': path.resolve(__dirname, 'node_modules/vue-admin-paper-dashboard/src/'),
+        }
+    }
+});
