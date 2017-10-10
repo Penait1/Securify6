@@ -23,3 +23,5 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm');
 Route::post('admin/login', 'Admin\Auth\LoginController@login');
 Route::post('admin/logout', 'Admin\Auth\LoginController@logout')->name('admin_logout');
+
+Route::get('grading_panel', 'Admin\HomeController@grading');
