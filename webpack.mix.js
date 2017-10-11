@@ -18,6 +18,8 @@ mix.styles([
     'node_modules/select2/dist/css/select2.min.css'
 ], 'public/css/vendor.css').version();
 
+
+
 mix.scripts([
     'node_modules/admin-lte/plugins/jQuery/jquery-*.min.js',
     'node_modules/admin-lte/plugins/jQueryUI/jquery-ui.min.js',
@@ -35,3 +37,8 @@ mix.copy([
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.styles([
+    'node_modules/admin-lte/bootstrap/css/bootstrap.css',
+    'resources/assets/css/stb.css'
+    ], 'public/css/stb_bundle.css').version();
