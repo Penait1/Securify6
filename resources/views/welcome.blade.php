@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Spot The Bug Challenge</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -79,8 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Spot The Bug Challenge
                 </div>
+                <p>Logged in as {{Auth::guard('participant')->user()->email}}</p>
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
@@ -88,6 +89,11 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ route('participant_logout') }}" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                        Logout
+                    </a>
+                    {!! Form::open(['route' => 'participant_logout', 'id' => 'frm-logout']) !!}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
