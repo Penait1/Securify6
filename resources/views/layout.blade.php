@@ -11,7 +11,6 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="{{ mix('css/stb_bundle.css') }}">
 
-        <!-- Styles -->
     </head>
     <body>
     <nav>
@@ -24,5 +23,13 @@
             <li><a href="#">Login</a></li>
         </ul>
     </nav>
+
+
+
+    @yield('content')
+
+
+
+
     </body>
 </html>
