@@ -35,3 +35,8 @@ mix.copy([
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.styles([
+    'node_modules/admin-lte/bootstrap/css/bootstrap.css',
+    'resources/assets/css/stb.css'
+], 'public/css/stb_bundle.css').version();
