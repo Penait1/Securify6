@@ -15,27 +15,51 @@
     <![endif]-->
 </head>
 <body>
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Spot The bug </div>
+                <div class="panel-body">
+                    <p>
+                      Welkom bij Spot The bug
+                        <ul>
+                        <li>
+                            Wat is Spot The Bug
+                        </li>
+                        <li>
+                            Hoe kan je meedoen
+                        </li>
+                        <li>
+                            Authenticatie
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login </div>
                 <div class="panel-body">
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="{{ route('social.redirect', ['provider' => 'google'])}}">Login met je Google Account</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('social.redirect', ['provider' => 'github'])}}">Login met je Github Account</a>
-                                    </li>
-
-                                </ul>
-                            </nav>
-
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="{{ route('social.redirect', ['provider' => 'google'])}}"><i class="fa fa-google-plus fa-5x" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="{{ route('social.redirect', ['provider' => 'github'])}}"><i class="fa fa-github fa-5x" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="{{ route('social.redirect', ['provider' => 'Linkedin'])}}"><i class="fa fa-linkedin-square fa-5x" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="{{ route('social.redirect', ['provider' => 'Facebook'])}}"><i class="fa fa-facebook-official fa-5x " aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
-
 
 </body>
 </html>
