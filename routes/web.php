@@ -10,10 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => 'auth:participant'], function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
+
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/', 'Admin\HomeController@index')->name('admin_home');
@@ -23,3 +25,10 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm');
 Route::post('admin/login', 'Admin\Auth\LoginController@login');
 Route::post('admin/logout', 'Admin\Auth\LoginController@logout')->name('admin_logout');
+
+
+// Authentication Participant Routes...
+Route::get('login/{provider}/callback', 'Participant\Auth\LoginController@handleProviderCallback');
+Route::get('login', 'Participant\Auth\LoginController@showLoginForm');
+Route::get('login/google', 'Participant\Auth\LoginController@login')->name('social.redirect');
+Route::post('logout', 'Participant\Auth\LoginController@logout')->name('participant_logout');
