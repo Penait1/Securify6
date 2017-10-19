@@ -39,6 +39,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
 mix.styles([
     'node_modules/admin-lte/bootstrap/css/bootstrap.css',
     'resources/assets/css/stb.css',
-    'resources/assets/css/font-awesome.css',
     'resources/assets/css/font-awesome.min.css'
 ], 'public/css/stb_bundle.css').version();
