@@ -15,7 +15,9 @@ mix.styles([
     'node_modules/admin-lte/bootstrap/css/bootstrap.css',
     'node_modules/admin-lte/dist/css/AdminLTE.css',
     'node_modules/admin-lte/dist/css/skins/skin-blue.css',
-    'node_modules/select2/dist/css/select2.min.css'
+    'node_modules/select2/dist/css/select2.min.css',
+    'node_modules/admin-lte/plugins/datatables/dataTables.bootstrap.css',
+    'node_modules/admin-lte/plugins/datatables/jquery.dataTables.css'
 ], 'public/css/vendor.css').version();
 
 mix.scripts([
@@ -24,7 +26,9 @@ mix.scripts([
     'node_modules/admin-lte/bootstrap/js/bootstrap.js',
     'node_modules/admin-lte/js/application.js',
     'node_modules/select2/dist/js/select2.min.js',
-    'node_modules/select2/dist/js/i18n/nl.js'
+    'node_modules/select2/dist/js/i18n/nl.js',
+    'node_modules/admin-lte/plugins/datatables/jquery.dataTables.js',
+    'node_modules/admin-lte/plugins/datatables/dataTables.bootstrap.js'
 ], 'public/js/vendor.js').version();
 
 mix.copy('node_modules/admin-lte/bootstrap/fonts', 'public/fonts');

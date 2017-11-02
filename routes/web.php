@@ -25,3 +25,5 @@ Route::post('admin/login', 'Admin\Auth\LoginController@login');
 Route::post('admin/logout', 'Admin\Auth\LoginController@logout')->name('admin_logout');
 
 Route::get('grading_panel', 'Admin\HomeController@grading');
+Route::get('challenge', "Admin\HomeController@challenge");
+Route::get('')
