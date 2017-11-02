@@ -30,5 +30,5 @@ Route::post('admin/logout', 'Admin\Auth\LoginController@logout')->name('admin_lo
 // Authentication Participant Routes...
 Route::get('login/{provider}/callback', 'Participant\Auth\LoginController@handleProviderCallback');
 Route::get('login', 'Participant\Auth\LoginController@showLoginForm');
-Route::get('login/google', 'Participant\Auth\LoginController@login')->name('social.redirect');
+Route::get('login/{provider}', 'Participant\Auth\LoginController@login')->name('social.redirect');
 Route::post('logout', 'Participant\Auth\LoginController@logout')->name('participant_logout');

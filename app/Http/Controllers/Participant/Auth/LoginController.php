@@ -54,12 +54,9 @@ class LoginController extends Controller
         return view('participant.auth.login', compact('uniqueLogin'));
     }
 
-    public function login(Request $request)
+    public function login(Request $request, $provider)
     {
-        $uniqueLogin = ($request->has('unique_login')) ? $request->get('unique_login') : '';
-
-        return Socialite::driver('google')
-            ->with(['state' => $uniqueLogin])
+        return Socialite::driver($provider)
             ->scopes(['profile','email'])
             ->redirect();
     }
