@@ -11,9 +11,7 @@
 |
 */
 Route::group(['middleware' => 'auth:participant'], function () {
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', 'Participant\HomeController@index')->name('participant_home');
 });
 
 

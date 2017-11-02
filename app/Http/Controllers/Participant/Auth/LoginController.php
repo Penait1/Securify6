@@ -91,9 +91,7 @@ class LoginController extends Controller
             $participant = Participant::byEmail($user->email);
         } catch (ModelNotFoundException $notFoundException) {
             // User not known to the system, make account
-            // @todo create user account
             $participant = Participant::create(['email' => $user->email]);
-            //dd($user);
         }
 
 
