@@ -1,7 +1,8 @@
 @extends('layouts.participant_master')
 
 @section('content')
-       <div class="container" style="background:white; width: 100%">
+    <div style="padding-top: 25px">
+       <div class="container" style="background:white; width: 100%; box-shadow: 10px 10px 5px grey; border-radius: 5px;">
            <!-- Portfolio Item Heading -->
            <h2 class="my-4">Spot The Bug Challenge
                <small></small>
@@ -10,8 +11,8 @@
        <!-- Portfolio Item Row Create for loop for creating each challenge-->
     <div class="row">
 
-        <div class="col-md-8" style="">
-            <img class="img-fluid" src="http://placehold.it/750x500" alt="" style="box-shadow: 10px 10px 5px grey;width: 100%; height: auto;">
+        <div class="col-md-7" style="">
+            <img class="img-fluid" src="http://placehold.it/750x500" alt="" style="max-width: 100%; height: auto;">
         </div>
 
         <div class="col-md-4">
@@ -32,25 +33,25 @@
 
     <div class="row">
        @for ($i = 1; $i < count($challenges) && $i < 5; $i++)
-        <div class="col-md-3 col-sm-6 mb-4" style=" padding-bottom: 15px;">
-            <a href="#">
-                <img class="img-fluid" src="http://placehold.it/250x150" alt="" style="box-shadow: 5px 5px 2px grey;width: 100%; height: auto;">
-            </a>
-            <div class="row">
-                    <div class="col-md-9 col-sm-6 mb-4" style="padding-top: 5px;">
-                        <a href="#">
-                            <p>Challenge: {{$challenges[$i]->created_at}}</p>
-                        </a>
-                    </div>
+            <div class="col-md-3 col-sm-6 mb-4" style=" padding-bottom: 15px;">
+                <a href="#">
+                    <img class="img-fluid" src="http://placehold.it/250x150" alt="" style="max-width: 100%; height: auto;">
+                </a>
+                <div class="row">
+                        <div class="col-md-9 col-sm-6 mb-4" style="padding-top: 5px;">
+                            <a href="#">
+                                <p>Challenge: {{$challenges[$i]->created_at}}</p>
+                            </a>
+                        </div>
+                </div>
             </div>
-        </div>
        @endfor
     </div>
 
     <!-- /.row -->
 
     </div>
-
+    </div>
 
     <div class="links">
 
