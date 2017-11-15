@@ -17,10 +17,10 @@
 
         <div class="col-md-4">
             <h3 class="my-3">challenge Description</h3>
-            <p>{{$challenges[0]->code}}</p>
+            <p>challenge description</p>
             <h3 class="my-3">challenge Details</h3>
             <ul>
-                <li>Created at: {{$challenges[0]->created_at}}</li>
+                <li>Created at: 2017-12-15</li>
             </ul>
         </div>
 
@@ -32,7 +32,7 @@
            <!-- create for loop to create related challenges -->
 
     <div class="row">
-       @for ($i = 1; $i < count($challenges) && $i < 5; $i++)
+       @for ($i = 1; $i < 5; $i++)
             <div class="col-md-3 col-sm-6 mb-4" style=" padding-bottom: 15px;">
                 <a href="#">
                     <img class="img-fluid" src="http://placehold.it/250x150" alt="" style="max-width: 100%; height: auto;">
@@ -40,7 +40,7 @@
                 <div class="row">
                         <div class="col-md-9 col-sm-6 mb-4" style="padding-top: 5px;">
                             <a href="#">
-                                <p>Challenge: {{$challenges[$i]->created_at}}</p>
+                                <p>Challenge: 2017-11-06</p>
                             </a>
                         </div>
                 </div>
