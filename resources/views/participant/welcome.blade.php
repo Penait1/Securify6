@@ -1,6 +1,8 @@
 @extends('layouts.participant_master')
 
 @section('content')
+    <p>Logged in as {{Auth::guard('participant')->user()->email}}</p>
+    
     <div style="padding-top: 25px">
        <div class="container" style="background:white; width: 100%; box-shadow: 10px 10px 5px grey; border-radius: 5px;">
            <!-- Portfolio Item Heading -->
