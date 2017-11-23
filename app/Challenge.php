@@ -17,4 +17,9 @@ class Challenge extends Model
         return $this->hasOne(ProgrammingLanguage::class);
     }
 
+    public function submissions(){
+
+        return $this->hasMany(Submission::class);
+    }
+
 }
