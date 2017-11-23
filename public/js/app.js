@@ -42153,7 +42153,7 @@ module.exports = Component.exports
 /***/ "./resources/assets/less/welcome.less":
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: Error: ENOENT: no such file or directory, open 'C:\\Users\\Gebruiker\\Documents\\Securify project minor\\resources\\assets\\less\\welcome.less'\n    at Error (native)\n    at runLoaders (C:\\Users\\Gebruiker\\Documents\\Securify project minor\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Users\\Gebruiker\\Documents\\Securify project minor\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\Gebruiker\\Documents\\Securify project minor\\node_modules\\loader-runner\\lib\\LoaderRunner.js:200:19\n    at C:\\Users\\Gebruiker\\Documents\\Securify project minor\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:70:14\n    at _combinedTickCallback (internal/process/next_tick.js:73:7)\n    at process._tickCallback (internal/process/next_tick.js:104:9)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

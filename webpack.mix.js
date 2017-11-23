@@ -34,6 +34,7 @@ mix.copy([
 
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .less('resources/assets/less/welcome.less', 'public/css')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.styles([
