@@ -27,7 +27,7 @@
             <!-- /.row -->
 
             <!-- Related challenges row-->
-            @if(count($challenges) > 1)
+            @if(count($challenges) >1)
             <h3 class="my-4">Related Challenges</h3>
             <!-- create for loop to create related challenges -->
             <div class="row">
@@ -47,7 +47,6 @@
                 @endfor
             </div>
             @endif
-
             <!-- /.row -->
 
         </div>
