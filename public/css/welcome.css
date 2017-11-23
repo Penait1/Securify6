@@ -1,0 +1,20 @@
+#ChallengeContainer {
+  background: white;
+  max-width: 100%;
+  -webkit-box-shadow: 10px 10px 5px grey;
+          box-shadow: 10px 10px 5px grey;
+  border-radius: 5px;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+#RCImg {
+  padding-bottom: 15px;
+}
+#RCDate {
+  padding-top: 5px;
+}
+#TopDiv {
+  padding-top: 10px;
+}
