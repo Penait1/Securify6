@@ -21,4 +21,9 @@ class Participant extends Authenticatable
     {
         return static::where('email', $email)->firstOrFail();
     }
+
+    public function submissions(){
+
+        return $this->hasMany(Submission::class);
+    }
 }
