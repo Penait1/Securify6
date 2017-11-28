@@ -121,7 +121,8 @@
                 </div>
                 <div class="box-body">
                     Start creating your amazing application!
-                    <a href="admin/challenges">Challenges </a>
+                    <p></p>
+                    <a href="{{route('challenges.index')}}">Challenges </a>
                     @yield('content', 'Objecten:')
                 </div>
                 <!-- /.box-body -->
