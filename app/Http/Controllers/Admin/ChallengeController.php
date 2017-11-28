@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Challenge;
 use App\Http\Controllers\Controller;
 
+use App\ProgrammingLanguage;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -20,7 +21,7 @@ class ChallengeController extends Controller
     {
         //
         $challenges = Challenge::all();
-        return view('admin.challenge.index',compact($challenges));
+        return view('admin.challenge.index',compact('challenges'));
     }
 
     /**
@@ -30,8 +31,9 @@ class ChallengeController extends Controller
      */
     public function create()
     {
-        $challenges = Challenge::all();
-        return view('admin.challenge.create',compact($challenges));
+        $programming_languages = ProgrammingLanguage::pluck('name', 'id');
+        $challenge = new Challenge();
+        return view('admin.challenge.create', compact('challenge', 'programming_languages'));
     }
 
     /**
@@ -42,7 +44,21 @@ class ChallengeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+//     dd($request->get('language_id'));  //
+        $rules = array(
+            'name'                  => 'required',
+            'language_id'           => 'required',
+            'content'               => 'required',
+            'description'           => 'required',
+
+        );
+        $programmingLanguage = ProgrammingLanguage::find($request->get('language_id'));
+//        dd($programmingLanguage);
+        $challenge = new Challenge($request->only('name','content','description','starting_at','ending_at'));
+        $challenge->programmingLanguage()->associate($request->get('language_id'));
+        $challenge->save();
+        return $this->index();
     }
 
     /**
