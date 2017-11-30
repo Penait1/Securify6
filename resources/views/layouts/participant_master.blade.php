@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<footer class="footer medium" >
+<footer class="site-footer" >
 <div class="container">
     <span>
         <a href="https://www.securify.nl/" target="_blank" id="footertext">Securify</a>
