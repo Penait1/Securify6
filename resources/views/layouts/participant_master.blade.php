@@ -42,5 +42,15 @@
         @yield('content')
     </div>
 </div>
+
+<footer class="footer medium" >
+<div class="container">
+    <span>
+        <a href="https://www.securify.nl/" target="_blank" id="footertext">Securify</a>
+
+    </span>
+</div>
+</footer>
+
 </body>
 </html>
