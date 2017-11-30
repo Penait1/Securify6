@@ -52,7 +52,7 @@ nav li:hover { box-shadow: 0 -5px 0 #f47321; }
 }
 
 #footertext span:hover {
-    border-radius: 0 0 .25em .25em;
+    border-radius: 0 0 .26em .25em;
     background: #f47321;
     box-shadow: 0 5px 0 #dc6519;
     color:white;
