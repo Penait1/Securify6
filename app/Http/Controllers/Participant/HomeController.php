@@ -11,7 +11,9 @@ class HomeController extends Controller
     public function index()
     {
         $challenges = Challenge::orderByDesc('created_at')->get();
-        return view('participant.welcome', compact('challenges'));
+        $newestChallenge = ($challenges->count() >= 1) ?$challenges->shift() : null;
+
+        return view('participant.welcome', compact('challenges', 'newestChallenge'));
     }
 
 }
