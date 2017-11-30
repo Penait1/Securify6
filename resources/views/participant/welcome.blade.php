@@ -13,7 +13,9 @@
             <!-- First challenge always the latest one-->
             <div class="row">
                 <div class="col-md-7">
+                    <a href="#">
                     <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+                    </a>
                 </div>
                 <div class="col-md-4">
                     <h3 class="my-3">Description</h3>
@@ -31,7 +33,7 @@
             <h3 class="my-4">Related Challenges</h3>
             <!-- create for loop to create related challenges -->
             <div class="row">
-                @for ($i = 1; $i < 5 && $i < count($challenges); $i++)
+                @foreach ($challenges as $challenge)
                     <div class="col-md-3 col-sm-6 mb-4" id="RCImg">
                         <a href="#">
                             <img class="img-fluid" src="http://placehold.it/250x150" alt="">
@@ -39,12 +41,12 @@
                         <div class="row">
                             <div class="col-md-9 col-sm-6 mb-4" id="RCDate">
                                 <a href="#">
-                                    <p>Challenge: 2017-11-06</p>
+                                    <p>Challenge: {{\Carbon\Carbon::parse($challenge->created_at)->format('Y-m-d')}}</p>
                                 </a>
                             </div>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
             @endif
             <!-- /.row -->

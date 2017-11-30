@@ -1,5 +1,6 @@
 #ChallengeContainer {
   background: white;
+  padding: 15px;
   max-width: 100%;
   -webkit-box-shadow: 10px 10px 5px grey;
           box-shadow: 10px 10px 5px grey;
@@ -15,6 +16,6 @@
 #RCDate {
   padding-top: 5px;
 }
-#TopDiv {
+#RCDate #TopDiv {
   padding-top: 10px;
 }
