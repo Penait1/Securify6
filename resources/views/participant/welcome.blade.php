@@ -9,25 +9,30 @@
             <h2 class="my-4">Spot The Bug Challenge
                 <small></small>
             </h2>
-
-            <!-- First challenge always the latest one-->
-            <div class="row">
-                <div class="col-md-7">
-                    <a href="#">
-                        <img class="img-fluid" src="http://placehold.it/750x500" alt="">
-                    </a>
+            @if(!empty($newestChallenge))
+                <!-- First challenge always the latest one-->
+                <div class="row">
+                    <div class="col-md-7">
+                        <a href="#">
+                            <img class="img-fluid" src="http://placehold.it/750x500" alt="">
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="my-3">Description</h3>
+                        <p>{{$newestChallenge->description}}</p>
+                        <h3 class="my-3">challenge Details</h3>
+                        <li>Created at: {{$newestChallenge->created_at}}</li>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h3 class="my-3">Description</h3>
-                    <p>{{$challenges[0]->description}}</p>
-                    <h3 class="my-3">challenge Details</h3>
-                    <li>Created at: {{$challenges[0]->created_at}}</li>
+                <!-- /.row -->
+            @else
+                <div class="alert alert-info">
+                    No challenges found
                 </div>
-            </div>
-            <!-- /.row -->
+            @endif
 
             <!-- Related challenges row-->
-            @if(count($challenges) >1)
+            @if(count($challenges) >= 1)
                 <h3 class="my-4">Related Challenges</h3>
                 <!-- create for loop to create related challenges -->
                 <div class="row">
