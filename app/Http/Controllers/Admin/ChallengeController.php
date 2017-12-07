@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Challenge;
 use App\Http\Controllers\Controller;
 
+use App\Http\Requests\AdminStoreChallenge;
 use App\ProgrammingLanguage;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -33,6 +35,8 @@ class ChallengeController extends Controller
     {
         $programming_languages = ProgrammingLanguage::pluck('name', 'id');
         $challenge = new Challenge();
+        $challenge->starting_at = Carbon::today()->toDateTimeString();
+        $challenge->ending_at = Carbon::tomorrow()->toDateTimeString();
         return view('admin.challenge.create', compact('challenge', 'programming_languages'));
     }
 
@@ -42,15 +46,9 @@ class ChallengeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AdminStoreChallenge $request)
     {
-        $rules = array(
-            'name'                  => 'required',
-            'language_id'           => 'required',
-            'content'               => 'required',
-            'description'           => 'required',
 
-        );
         $programmingLanguage = ProgrammingLanguage::find($request->get('language_id'));
         $challenge = new Challenge($request->only('name','content','description','starting_at','ending_at'));
         $challenge->programmingLanguage()->associate($request->get('language_id'));
@@ -91,9 +89,12 @@ class ChallengeController extends Controller
      * @param  \App\Challenge  $challenge
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Challenge $challenge)
+    public function update(AdminStoreChallenge $request, Challenge $challenge)
     {
-        //
+        $challenge->update($request->only('name', 'content','description','starting_at','ending_at'));
+        $challenge->programmingLanguage()->associate($request->get('language_id'));
+        $challenge->save();
+        return redirect(route('challenges.index'));
     }
 
     /**
