@@ -35,10 +35,13 @@ mix.copy([
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .less('resources/assets/less/welcome.less', 'public/css')
+    .less('resources/assets/less/challenge.less', 'public/css')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.styles([
     'node_modules/admin-lte/bootstrap/css/bootstrap.css',
     'resources/assets/css/stb.css',
-    'resources/assets/css/font-awesome.min.css'
+    'resources/assets/css/font-awesome.min.css',
+    'public/css/welcome.css',
+    'public/css/challenge.css'
 ], 'public/css/stb_bundle.css').version();

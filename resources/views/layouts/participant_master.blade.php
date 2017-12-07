@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ mix('css/stb_bundle.css') }}">
-    <link rel="stylesheet" href="{{ mix('css/welcome.css') }}">
 
 </head>
 <body>

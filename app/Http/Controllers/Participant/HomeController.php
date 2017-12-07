@@ -18,9 +18,7 @@ class HomeController extends Controller
 
     public function challenge($id)
     {
-        $challenges = Challenge::find($id);
-
-
+        $challenges = Challenge::FindOrFail($id);
         return view('participant.challenge', compact('challenges'));
     }
 
