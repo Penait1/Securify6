@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Participant;
 
-use DB;
+use App\Challenge;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
@@ -10,8 +10,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        $challenges = DB::Table('challenges')->orderBy('created_at', 'desc')->get();
-        return view('participant.welcome', compact('challenges'));
+        $challenges = Challenge::orderByDesc('created_at')->get();
+        $newestChallenge = ($challenges->count() >= 1) ?$challenges->shift() : null;
+
+        return view('participant.welcome', compact('challenges', 'newestChallenge'));
     }
 
 }
