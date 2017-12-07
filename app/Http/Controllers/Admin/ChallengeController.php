@@ -105,6 +105,7 @@ class ChallengeController extends Controller
      */
     public function destroy(Challenge $challenge)
     {
-        //
+        $challenge->delete();
+        return redirect(route('challenges.index'));
     }
 }

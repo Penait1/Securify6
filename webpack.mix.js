@@ -18,7 +18,8 @@ mix.styles([
     'node_modules/select2/dist/css/select2.min.css',
     'resources/assets/css/bootstrap-datetimepicker.min.css',
     'node_modules/admin-lte/plugins/css/dataTables.bootstrap.css',
-    'node_modules/admin-lte/plugins/css/jquery.dataTables.css'
+    'node_modules/admin-lte/plugins/css/jquery.dataTables.css',
+    'public/css/admin.css'
 ], 'public/css/vendor.css').version();
 
 mix.scripts([
@@ -43,6 +44,7 @@ mix.copy([
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .less('resources/assets/less/welcome.less', 'public/css')
+    .less('resources/assets/less/admin.less', 'public/css')
    .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.styles([

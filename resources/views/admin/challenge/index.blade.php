@@ -19,7 +19,12 @@
                 @foreach($challenges as $challenge)
                     <tr>
                         <td>{{$challenge->name}}</td>
-                        <td><a href="{{route('challenges.edit', [$challenge->id])}}"><i class="fa fa-pencil-square-o"></i></a></td>
+                        <td class="center">
+                            <a href="{{route('challenges.edit', [$challenge->id])}}"><i class="fa fa-pencil-square-o"></i></a>
+                            {!! Form::open(['method' => 'DELETE', 'route' => ['challenges.destroy', $challenge->id], 'class' => 'delete_form', 'id' => 'form-delete-challenges-' . $challenge->id]) !!}
+                                <a href="#"  data-form="challenges-{{ $challenge->id }}" class="data-delete"><i class="fa fa-trash-o"></i></a>
+                            {!! Form::close() !!}
+                        </td>
                     </tr>
                 @endforeach
 
