@@ -5,7 +5,8 @@
         <div id="left" style="float:left; width:48%; margin-left: 10px; border: 15px solid green;">
             Challenge code:
             <div>
-                    <textarea name="message" readonly rows="29" style="width: 100%">{{$challenges->content}}</textarea>
+
+                    <!--<textarea name="message" readonly rows="29" style="width: 100%">{{$challenges->content}}</textarea>-->
             </div>
         </div>
 

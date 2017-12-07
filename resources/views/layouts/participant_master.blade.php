@@ -53,5 +53,6 @@
 </div>
 </footer>
 
+<script src="{{ mix('js/vendor_stb.js') }}"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 {
-    "/js/app.js": "/js/app.js?id=da8e43c1a8ca51cd9937",
+    "/js/app.js": "/js/app.js?id=d17f2ffda3bbd36b3c26",
     "/css/welcome.css": "/css/welcome.css?id=777ace00ce7156fb5ac7",
     "/css/app.css": "/css/app.css?id=3ede8f2085da46f757cf",
     "/css/vendor.css": "/css/vendor.css?id=03a03b44773270c794af",
     "/js/vendor.js": "/js/vendor.js?id=271eb7b709308f664dd2",
     "/img/boxed-bg.jpg": "/img/boxed-bg.jpg?id=0e083c8f5daa7ed2f86d",
-    "/css/stb_bundle.css": "/css/stb_bundle.css?id=1d6de0f4d66440f5e3c0"
+    "/css/stb_bundle.css": "/css/stb_bundle.css?id=17dcbd301dc99fc0681c",
+    "/js/vendor_stb.js": "/js/vendor_stb.js?id=4749ca061cae3c0e3dc6"
 }
