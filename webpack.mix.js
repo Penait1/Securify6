@@ -17,12 +17,16 @@ mix.styles([
     'node_modules/admin-lte/dist/css/skins/skin-blue.css',
     'node_modules/select2/dist/css/select2.min.css',
     'resources/assets/css/bootstrap-datetimepicker.min.css',
+    'node_modules/admin-lte/plugins/css/dataTables.bootstrap.css',
+    'node_modules/admin-lte/plugins/css/jquery.dataTables.css'
 ], 'public/css/vendor.css').version();
 
 mix.scripts([
     'node_modules/admin-lte/plugins/jQuery/jquery-*.min.js',
     'node_modules/admin-lte/plugins/jQueryUI/jquery-ui.min.js',
     'node_modules/admin-lte/bootstrap/js/bootstrap.js',
+    'node_modules/admin-lte/plugins/datatables/jquery.dataTables.min.js',
+    'node_modules/admin-lte/plugins/datatables/dataTables.bootstrap.min.js',
     'node_modules/admin-lte/js/application.js',
     'node_modules/select2/dist/js/select2.min.js',
     'resources/assets/js/bootstrap-datetimepicker.min.js',
