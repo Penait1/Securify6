@@ -6,7 +6,10 @@
         <p>Challenge Index</p>
 
             @foreach($challenges as $challenge)
-                <p> Challenge: <a href="{{route('challenges.edit', [$challenge->id])}}">{{$challenge->name}}</a> </p>
+                <p>
+                    Challenge: <a href="{{route('challenges.edit', [$challenge->id])}}">{{$challenge->name}}</a>
+                </p>
+
             @endforeach
 
 
