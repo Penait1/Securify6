@@ -5,13 +5,13 @@
         <div id="left">
             Challenge code:
             <div>
-                <pre><code class="language-css">{{$challenges->content}}</code></pre>
+                <pre class="line-numbers" data-start="1"> <code class="language-css "  >{{$challenges->content}}</code></pre>
 
             </div>
         </div>
 
         <div id="right">
-            Challenge awnsers
+            Challenge answers
             <div>
                 <textarea name="message" rows="29"></textarea>
             </div>
