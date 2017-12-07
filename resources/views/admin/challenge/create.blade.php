@@ -1,29 +1,19 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12">
-            <p>Challenge Create</p>
-
-            <div class="form-group {{ $errors->has('meta_description') ? 'has-error' : ''}}">
-
-            </div>
-
-
-            {{Form::model($challenge, ['route'=>['challenges.store']])}}
-
-
-            @include('admin.challenge.partials._form')
-
-
-            {{Form::submit('Maak Challenge')}}
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Create challenge</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            {{Form::model($challenge, ['route'=>['challenges.store'], 'class' => 'form-horizontal'])}}
+                @include('admin.challenge.partials._form')
+                {{Form::submit('Create', ['class' => 'btn btn-primary pull-right'])}}
             {{Form::close()}}
 
-
         </div>
+        <!-- /.box-body -->
     </div>
-
-
-
-
+    <!-- /.box -->
 @endsection
