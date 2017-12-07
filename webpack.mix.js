@@ -17,6 +17,7 @@ mix.styles([
     'node_modules/admin-lte/dist/css/skins/skin-blue.css',
     'node_modules/select2/dist/css/select2.min.css',
     'resources/assets/css/bootstrap-datetimepicker.min.css',
+    'resources/assets/css/jquery.dataTables.min.css',
 ], 'public/css/vendor.css').version();
 
 mix.scripts([
@@ -27,7 +28,8 @@ mix.scripts([
     'node_modules/select2/dist/js/select2.min.js',
     'resources/assets/js/bootstrap-datetimepicker.min.js',
     'node_modules/select2/dist/js/i18n/nl.js',
-    'resources/assets/js/admin.js'
+    'resources/assets/js/admin.js',
+    'resources/assets/js/jquery.dataTables.min.js',
 
 ], 'public/js/vendor.js').version();
 
