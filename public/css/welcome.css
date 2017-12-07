@@ -1,18 +1,1 @@
-#ChallengeContainer {
-  background: white;
-  padding: 15px;
-  max-width: 100%;
-  -webkit-box-shadow: 10px 10px 5px grey;
-          box-shadow: 10px 10px 5px grey;
-  border-radius: 5px;
-}
-#ChallengeContainer .img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-#ChallengeContainer #RCDate {
-  padding-top: 15px;
-}
-#ChallengeContainer #RCImg {
-  padding-top: 5px;
-}
+#ChallengeContainer{background:#fff;padding:15px;max-width:100%;-webkit-box-shadow:10px 10px 5px grey;box-shadow:10px 10px 5px grey;border-radius:5px}#ChallengeContainer .img-fluid{max-width:100%;height:auto}#ChallengeContainer #RCDate{padding-top:15px}#ChallengeContainer #RCImg{padding-top:5px}

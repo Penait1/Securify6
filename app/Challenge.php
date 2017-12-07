@@ -11,10 +11,10 @@ class Challenge extends Model
 {
     //
     use SoftDeletes;
-    protected $fillable = ['name','content','starting_at','ending_at'];
+    protected $fillable = ['name','description', 'content','starting_at','ending_at'];
 
     public function programmingLanguage(){
-        return $this->hasOne(ProgrammingLanguage::class);
+        return $this->belongsTo(ProgrammingLanguage::class, 'language_id');
     }
 
     public function submissions(){
