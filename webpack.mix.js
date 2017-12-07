@@ -42,6 +42,12 @@ mix.styles([
     'node_modules/admin-lte/bootstrap/css/bootstrap.css',
     'resources/assets/css/stb.css',
     'resources/assets/css/font-awesome.min.css',
+    'node_modules/prismjs/themes/prism-coy.css',
+    'resources/assets/css/font-awesome.min.css',
     'public/css/welcome.css',
     'public/css/challenge.css'
 ], 'public/css/stb_bundle.css').version();
+
+mix.scripts([
+   'node_modules/prismjs/prism.js'
+], 'public/js/vendor_stb.js').version();

@@ -9,6 +9,7 @@
             <h2 class="my-4">Spot The Bug Challenge
                 <small></small>
             </h2>
+
             @if(!empty($newestChallenge))
                 <!-- First challenge always the latest one-->
                 <div class="row">

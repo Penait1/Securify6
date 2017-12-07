@@ -1,10 +1,11 @@
 {
-    "/js/app.js": "/js/app.js?id=712b00455d6c36b3b64e",
-    "/css/welcome.css": "/css/welcome.css?id=777ace00ce7156fb5ac7",
-    "/css/challenge.css": "/css/challenge.css?id=7f25dba977624a9e161f",
-    "/css/app.css": "/css/app.css?id=3ede8f2085da46f757cf",
+    "/js/app.js": "/js/app.js?id=99765ad54fe142f80b48",
+    "/css/welcome.css": "/css/welcome.css?id=0411f5fae7b353fbbc12",
+    "/css/challenge.css": "/css/challenge.css?id=58913b2e54f6691baae0",
+    "/css/app.css": "/css/app.css?id=b9cb5c393f3dcc0fb457",
     "/css/vendor.css": "/css/vendor.css?id=03a03b44773270c794af",
     "/js/vendor.js": "/js/vendor.js?id=271eb7b709308f664dd2",
     "/img/boxed-bg.jpg": "/img/boxed-bg.jpg?id=0e083c8f5daa7ed2f86d",
-    "/css/stb_bundle.css": "/css/stb_bundle.css?id=32172026261b5c86ff4d"
+    "/css/stb_bundle.css": "/css/stb_bundle.css?id=0270e9f0391d086f8fdd",
+    "/js/vendor_stb.js": "/js/vendor_stb.js?id=4749ca061cae3c0e3dc6"
 }

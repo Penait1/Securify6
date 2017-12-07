@@ -5,7 +5,8 @@
         <div id="left">
             Challenge code:
             <div>
-                    <textarea name="message" readonly rows="29">{{$challenges->content}}</textarea>
+                <pre><code class="language-css">{{$challenges->content}}</code></pre>
+
             </div>
         </div>
 
