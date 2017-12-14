@@ -1,51 +1,69 @@
-<div class="form-group {{ $errors->has('name') ? 'has-error' : ''}}">
-    {{Form::label('name', 'Challenge Name :', ['class' => 'col-sm-2 control-label'])}}
-    <div class="col-sm-10">
-        {{Form::text('name', $challenge->name, ['class' => 'form-control'])}}
+
+    <div class="row">
+        <div class="col-lg-12 margin-tb">
+            <div class="pull-left">
+                <h2> Show Submission</h2>
+            </div>
+            <div class="pull-right">
+                <a class="btn btn-primary" href="{{ route('submissions.index') }}"> Back</a>
+            </div>
+        </div>
     </div>
-    {!! $errors->first('name', '<span class="help-block col-sm-10 col-sm-offset-2">:message</span>')!!}
-</div>
-
-<div class="form-group {{ $errors->has('language_id') ? 'has-error' : ''}}">
-    {{Form::label('language_id', 'Programming Language :', ['class' => 'col-sm-2 control-label'])}}
-    <div class="col-sm-10">
-        {{Form::select('language_id', $programming_languages, $challenge->language_id,['class' => 'form-control'])}}
-    </div>
-    {!! $errors->first('language_id', '<span class="help-block col-sm-10 col-sm-offset-2">:message</span>')!!}
-</div>
 
 
-<div class="form-group {{ $errors->has('content') ? 'has-error' : ''}}">
-    {{Form::label('content', 'Content :', ['class' => 'col-sm-2 control-label'])}}
-    <div class="col-sm-10">
-        {{Form::textarea('content', $challenge->content, ['size' => '100x10', 'class' => 'form-control']) }}
-    </div>
-    {!! $errors->first('content', '<span class="help-block col-sm-10 col-sm-offset-2">:message</span>')!!}
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Submission ID:</strong>
+                {{ $submission->id}}
+            </div>
+        </div>
 
-</div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Challenge:</strong>
+                {{ $submission->challenge->name}}
+            </div>
+        </div>
 
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Participant:</strong>
+                {{ $submission->participant->email}}
+            </div>
+        </div>
 
-<div class="form-group {{ $errors->has('description') ? 'has-error' : ''}}">
-    {{Form::label('description', 'Challenge Description :', ['class' => 'col-sm-2 control-label'])}}
-    <div class="col-sm-10">
-        {{Form::textarea('description', $challenge->description, ['class' => 'form-control'])}}
-    </div>
-    {!! $errors->first('description', '<span class="help-block col-sm-10 col-sm-offset-2">:message</span>')!!}
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>RegelNR:</strong>
+                {{ $submission->line_number}}
+            </div>
+        </div>
 
-</div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Comment:</strong>
+                {{ $submission->comment}}
+            </div>
+        </div>
 
-<div class="form-group {{ $errors->has('starting_at') ? 'has-error' : ''}}">
-    {{Form::label('starting_at', 'Starting Date :', ['class' => 'col-sm-2 control-label'])}}
-    <div class="col-sm-10">
-        {{Form::text('starting_at',$challenge->starting_at, ['class' => 'form-control form_datetime'])}}
-    </div>
-    {!! $errors->first('starting_at', '<span class="help-block col-sm-10 col-sm-offset-2">:message</span>')!!}
-</div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Created at:</strong>
+                {{ $submission->created_at}}
+            </div>
+        </div>
 
-<div class="form-group {{ $errors->has('ending_at') ? 'has-error' : ''}}">
-    {{Form::label('ending_at', 'Ending Date :', ['class' => 'col-sm-2 control-label'])}}
-    <div class="col-sm-10">
-        {{Form::text('ending_at',$challenge->ending_at, ['class' => 'form-control form_datetime'])}}
-    </div>
-    {!! $errors->first('ending_at', '<span class="help-block col-sm-10 col-sm-offset-2">:message</span>')!!}
-</div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Updated at:</strong>
+                {{ $submission->updated_at}}
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Challenge Content:</strong>
+                {{ $submission->challenge->content}}
+            </div>
+        </div>
+

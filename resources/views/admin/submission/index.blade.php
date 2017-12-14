@@ -23,7 +23,7 @@
                         <td>{{$submission->challenge->name}}</td>
 
                         <td class="center">
-                            <a href="{{route('challenges.edit', [$submission->id])}}"><i class="fa fa-pencil-square-o"></i></a>
+                            <a href="{{route('submissions.show', [$submission->id])}}"><i class="fa fa-pencil-square-o"></i></a>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['submissions.destroy', $submission->id], 'class' => 'delete_form', 'id' => 'form-delete-submissions-' . $submission->id]) !!}
                                 <a href="#"  data-form="submissions-{{ $submission->id }}" class="data-delete"><i class="fa fa-trash-o"></i></a>
                             {!! Form::close() !!}
