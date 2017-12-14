@@ -32,7 +32,8 @@ mix.scripts([
     'node_modules/select2/dist/js/select2.min.js',
     'resources/assets/js/bootstrap-datetimepicker.min.js',
     'node_modules/select2/dist/js/i18n/nl.js',
-    'resources/assets/js/admin.js'
+    'resources/assets/js/admin.js',
+    'node_modules/prismjs/prism.js',
 
 ], 'public/js/vendor.js').version();
 
