@@ -11,9 +11,9 @@ class Submission extends Model
 
     protected $fillable=['comment','line_number'];
 
-    public function submission(){
+    public function challenge(){
 
-        return $this->hasMany(Challenge::class);
+        return $this->belongsTo(Challenge::class);
     }
 
     public function participant(){
