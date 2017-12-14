@@ -18,6 +18,7 @@ Route::group(['middleware' => 'auth:participant'], function () {
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/', 'Admin\HomeController@index')->name('admin_home');
     Route::resources(['challenges' => 'Admin\ChallengeController']);
+    Route::resources(['submissions' => 'Admin\SubmissionController']);
 
 });
 
