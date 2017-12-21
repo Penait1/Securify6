@@ -34,6 +34,7 @@ mix.copy([
 
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/markText.js', 'public/js')
     .less('resources/assets/less/welcome.less', 'public/css')
     .less('resources/assets/less/challenge.less', 'public/css')
    .sass('resources/assets/sass/app.scss', 'public/css');
@@ -45,9 +46,13 @@ mix.styles([
     'node_modules/prismjs/themes/prism-coy.css',
     'resources/assets/css/font-awesome.min.css',
     'public/css/welcome.css',
-    'public/css/challenge.css'
+    'public/css/challenge.css',
+    'node_modules/prismjs/plugins/line-numbers/prism-line-highlight.css',
+    'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css'
 ], 'public/css/stb_bundle.css').version();
 
 mix.scripts([
-   'node_modules/prismjs/prism.js'
+   'node_modules/prismjs/prism.js',
+    'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
+    'node_modules/prismjs/plugins/line-numbers/prism-line-highlight.js'
 ], 'public/js/vendor_stb.js').version();
