@@ -28,7 +28,7 @@ p {
                 <a class="" target="_blank" href="{{route('user_submissions', [$submission->challenge_id, $submission->participant_id])}}">
                     <i  class="fa fa-code fa-3x" aria-hidden="true" style="margin-bottom: 5px;"></i>
 
-                    <p class="textWrap">Line Number: {{$submission->line_number}}</p>
+                    <p class="textWrap">Line Number: {{$submission->line_number_from}}-{{$submission->line_number_to}}</p>
 
                 </a></div>
         @endforeach
