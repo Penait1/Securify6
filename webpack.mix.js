@@ -47,12 +47,10 @@ mix.styles([
     'resources/assets/css/font-awesome.min.css',
     'public/css/welcome.css',
     'public/css/challenge.css',
-    'node_modules/prismjs/plugins/line-numbers/prism-line-highlight.css',
     'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css'
 ], 'public/css/stb_bundle.css').version();
 
 mix.scripts([
    'node_modules/prismjs/prism.js',
-    'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
-    'node_modules/prismjs/plugins/line-numbers/prism-line-highlight.js'
+    'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js'
 ], 'public/js/vendor_stb.js').version();
