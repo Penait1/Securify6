@@ -18,6 +18,7 @@
                 </thead>
                 <tbody>
                 @foreach($submissions as $submission)
+
                     <tr>
                         <td>{{$submission->participant->email}}</td>
                         <td>{{$submission->challenge->name}}</td>

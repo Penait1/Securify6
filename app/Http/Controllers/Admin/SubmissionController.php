@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Challenge;
 use App\Http\Controllers\Controller;
 use App\Submission;
 use Illuminate\Http\Request;
@@ -15,8 +16,8 @@ class SubmissionController extends Controller
      */
     public function index()
     {
-        $submissions = Submission::select('participant_id')->groupBy('participant_id')->get();
-        dd($submissions);
+        $submissions = Submission::groupBy(['participant_id', 'challenge_id'])->get();
+//        dd($submissions);
         return view('admin.submission.index',compact('submissions'));
     }
 
@@ -47,11 +48,7 @@ class SubmissionController extends Controller
      * @param  \App\Submission  $submission
      * @return \Illuminate\Http\Response
      */
-    public function show(Submission $submission)
-    {
 
-        return view('admin.submission.show',compact('submission'));
-    }
 
     /**
      * Show the form for editing the specified resource.

@@ -19,7 +19,10 @@ mix.styles([
     'resources/assets/css/bootstrap-datetimepicker.min.css',
     'node_modules/admin-lte/plugins/css/dataTables.bootstrap.css',
     'node_modules/admin-lte/plugins/css/jquery.dataTables.css',
-    'public/css/admin.css'
+    'public/css/admin.css',
+    'node_modules/prismjs/themes/prism-coy.css',
+    'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css',
+    'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css',
 ], 'public/css/vendor.css').version();
 
 mix.scripts([
@@ -34,6 +37,8 @@ mix.scripts([
     'node_modules/select2/dist/js/i18n/nl.js',
     'resources/assets/js/admin.js',
     'node_modules/prismjs/prism.js',
+    'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
+    'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js',
 
 ], 'public/js/vendor.js').version();
 

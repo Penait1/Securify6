@@ -13,7 +13,7 @@ class Submission extends Model
 
     public function challenge(){
 
-        return $this->belongsTo(Challenge::class);
+        return $this->belongsTo(Challenge::class)->withTrashed();
     }
 
     public function participant(){

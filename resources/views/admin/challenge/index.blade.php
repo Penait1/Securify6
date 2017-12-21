@@ -18,7 +18,8 @@
                 <tbody>
                 @foreach($challenges as $challenge)
                     <tr>
-                        <td>{{$challenge->name}}</td>
+
+                        <td><a href="{{route('challenges.show', [$challenge->id])}}" class="show-participants"> {{$challenge->name}}</a></td>
                         <td class="center">
                             <a href="{{route('challenges.edit', [$challenge->id])}}"><i class="fa fa-pencil-square-o"></i></a>
                             {!! Form::open(['method' => 'DELETE', 'route' => ['challenges.destroy', $challenge->id], 'class' => 'delete_form', 'id' => 'form-delete-challenges-' . $challenge->id]) !!}
@@ -41,4 +42,41 @@
         <!-- /.box-body -->
     </div>
     <!-- /.box -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Submissions: </h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+@endsection
+
+@section('bottom')
+    <script>
+        $(document).ready(function(){
+            $('.show-participants').on('click',function(e){
+                e.preventDefault();
+                var dataURL = $(this).attr('href');
+                console.log(dataURL);
+                $('.modal-body').load(dataURL,function(){
+                    $('#myModal').modal({show:true});
+                });
+            });
+        });
+    </script>
 @endsection

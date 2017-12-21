@@ -6,7 +6,9 @@ use App\Challenge;
 use App\Http\Controllers\Controller;
 
 use App\Http\Requests\AdminStoreChallenge;
+use App\Participant;
 use App\ProgrammingLanguage;
+use App\Submission;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -64,7 +66,15 @@ class ChallengeController extends Controller
      */
     public function show(Challenge $challenge)
     {
-        //
+        $submissions = $challenge->submissions()
+                                  ->select(['participant_id','challenge_id'])
+                                  ->groupBy('participant_id', 'challenge_id')
+                                  ->get();
+
+
+//        dd($submissions);
+        return view('admin.challenge.show',compact('submissions'));
+
 
     }
 
@@ -79,7 +89,7 @@ class ChallengeController extends Controller
 
         $programming_languages = ProgrammingLanguage::pluck('name', 'id');
 
-       return view('admin.challenge.edit',compact('challenge','programming_languages'));
+        return view('admin.challenge.edit',compact('challenge','programming_languages'));
     }
 
     /**
@@ -107,5 +117,14 @@ class ChallengeController extends Controller
     {
         $challenge->delete();
         return redirect(route('challenges.index'));
+    }
+
+    public function submissions(Challenge $challenge, Participant $participant)
+    {
+
+        $userSubmissions = $challenge->submissions()->where('participant_id', '=', $participant->id)->get();
+//        dd($userSubmission);
+
+        return view('admin.submission.show',compact('userSubmissions', 'challenge'));
     }
 }
