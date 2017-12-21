@@ -53,6 +53,7 @@ mix.styles([
 ], 'public/css/stb_bundle.css').version();
 
 mix.scripts([
+    'node_modules/admin-lte/plugins/jQuery/jquery-*.min.js',
    'node_modules/prismjs/prism.js',
     'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
     'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js',

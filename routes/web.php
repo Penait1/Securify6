@@ -13,6 +13,8 @@
 Route::group(['middleware' => 'auth:participant'], function () {
     Route::get('/', 'Participant\HomeController@index')->name('participant_home');
     Route::get('/challenge/{id}', 'Participant\HomeController@challenge')->name('participant_challenge');
+
+    Route::post("/submissions", "Participant\HomeController@submissions");
 });
 
 

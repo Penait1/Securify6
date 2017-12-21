@@ -21,9 +21,13 @@
 
         <div id="right">
             Challenge answers
-            <div>
-                <textarea id="comments" name="message" rows="29"></textarea>
-            </div>
+            <form action="/submissions" method="post">
+                {{ csrf_field() }}
+                <div id="comments">
+
+                </div>
+                <button value="send" type="submit"/>
+            </form>
         </div>
     </div>
 
