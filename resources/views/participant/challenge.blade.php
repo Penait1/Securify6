@@ -2,11 +2,11 @@
 
 @section('content')
     <div id="container">
-        <input type="button" onclick="surroundSelection()" value="Mark">
+        <input type="button" onclick="copySelectionToTextView()" value="Mark">
         <div id="left">
             Challenge code:
             <div>
-                <pre class="line-numbers" data-line="5-7"><code class="language-HTML" >
+                <pre id='codeBlock' class="line-numbers" data-line="1"><code id='code' class="language-HTML">
                         <mark> oh hi mark!</mark> {{$challenges->content }}
                 </code></pre>
                 <pre><code class="language-css">
@@ -20,9 +20,9 @@
         </div>
 
         <div id="right">
-            Challenge awnsers
+            Challenge answers
             <div>
-                <textarea name="message" rows="29">surroundSelection()</textarea>
+                <textarea id="comments" name="message" rows="29"></textarea>
             </div>
         </div>
     </div>
