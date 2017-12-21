@@ -123,8 +123,9 @@ class ChallengeController extends Controller
     {
 
         $userSubmissions = $challenge->submissions()->where('participant_id', '=', $participant->id)->get();
+        $lineNumbers = $challenge->getLineNumbersByParticipant($participant->id);
 //        dd($userSubmission);
 
-        return view('admin.submission.show',compact('userSubmissions', 'challenge'));
+        return view('admin.submission.show',compact('userSubmissions', 'challenge', 'participant', 'lineNumbers'));
     }
 }

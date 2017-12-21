@@ -13,6 +13,15 @@ class Challenge extends Model
     use SoftDeletes;
     protected $fillable = ['name','description', 'content','starting_at','ending_at'];
 
+    public function getLineNumbersByParticipant($participantId)
+    {
+        return self::submissions()->where('participant_id', '=', $participantId)
+            ->select('line_number')
+            ->orderBy('line_number')
+            ->pluck('line_number')
+            ->toArray();
+    }
+
     public function programmingLanguage(){
         return $this->belongsTo(ProgrammingLanguage::class, 'language_id');
     }
