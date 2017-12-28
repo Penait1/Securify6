@@ -21,7 +21,7 @@
 
         <div id="right">
             Challenge answers
-            <form action="/submissions" method="post">
+            <form action="/challenge/{{$challenges->id}}/submit" method="post">
                 {{ csrf_field() }}
                 <div id="comments">
 
