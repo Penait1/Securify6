@@ -17,6 +17,17 @@ class Challenge extends Model
         return $this->hasOne(ProgrammingLanguage::class);
     }
 
+    /**
+     * Retrieve a challenge by their id.
+     *
+     * @param  int $id
+     * @return $this
+     */
+    public static function byId($id)
+    {
+        return static::where('id', $id)->firstOrFail();
+    }
+
     public function submissions(){
 
         return $this->hasMany(Submission::class);
