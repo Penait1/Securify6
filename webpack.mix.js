@@ -66,10 +66,8 @@ mix.styles([
     'public/css/welcome.css',
     'public/css/challenge.css',
     'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css',
-    'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css'
-
+    'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css',
     'resources/assets/css/font-awesome.min.css',
-
 ], 'public/css/stb_bundle.css').version();
 
 mix.scripts([
