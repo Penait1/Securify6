@@ -16,9 +16,9 @@ class Challenge extends Model
     public function getLineNumbersByParticipant($participantId)
     {
         return self::submissions()->where('participant_id', '=', $participantId)
-            ->select('line_number')
-            ->orderBy('line_number')
-            ->pluck('line_number')
+            ->select('line_number_from', 'line_number_to')
+            ->orderBy('line_number_from')
+            ->pluck( 'line_number_to', 'line_number_from')
             ->toArray();
     }
 

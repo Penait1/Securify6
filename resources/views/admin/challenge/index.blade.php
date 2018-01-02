@@ -45,7 +45,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
 
             <!-- Modal content-->
             <div class="modal-content">
@@ -64,19 +64,4 @@
         </div>
     </div>
 
-@endsection
-
-@section('bottom')
-    <script>
-        $(document).ready(function(){
-            $('.show-participants').on('click',function(e){
-                e.preventDefault();
-                var dataURL = $(this).attr('href');
-                console.log(dataURL);
-                $('.modal-body').load(dataURL,function(){
-                    $('#myModal').modal({show:true});
-                });
-            });
-        });
-    </script>
 @endsection

@@ -8,10 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AdminStoreChallenge;
 use App\Participant;
 use App\ProgrammingLanguage;
-use App\Submission;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Illuminate\View\View;
+use Facades\App\Helpers\CommentLinesHelper;
 
 
 class ChallengeController extends Controller
@@ -71,11 +69,7 @@ class ChallengeController extends Controller
                                   ->groupBy('participant_id', 'challenge_id')
                                   ->get();
 
-
-//        dd($submissions);
         return view('admin.challenge.show',compact('submissions'));
-
-
     }
 
     /**
@@ -121,10 +115,9 @@ class ChallengeController extends Controller
 
     public function submissions(Challenge $challenge, Participant $participant)
     {
-
         $userSubmissions = $challenge->submissions()->where('participant_id', '=', $participant->id)->get();
-        $lineNumbers = $challenge->getLineNumbersByParticipant($participant->id);
-//        dd($userSubmission);
+
+        $lineNumbers = CommentLinesHelper::generateCodeLines($challenge, $participant);
 
         return view('admin.submission.show',compact('userSubmissions', 'challenge', 'participant', 'lineNumbers'));
     }

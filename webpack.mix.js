@@ -37,12 +37,14 @@ mix.scripts([
     'node_modules/select2/dist/js/i18n/nl.js',
     'resources/assets/js/admin.js',
     'node_modules/prismjs/prism.js',
+    'node_modules/prismjs/plugins/autoloader/prism-autoloader.js',
     'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
     'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js',
 
 ], 'public/js/vendor.js').version();
 
 mix.copy('node_modules/admin-lte/bootstrap/fonts', 'public/fonts');
+mix.copy('node_modules/prismjs/components', 'public/js/languages');
 mix.copy([
     'node_modules/admin-lte/dist/img/boxed-bg.jpg',
 ], 'public/img');

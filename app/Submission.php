@@ -9,7 +9,7 @@ class Submission extends Model
     //
 
 
-    protected $fillable=['comment','line_number'];
+    protected $fillable=['comment','line_number_from','line_number_to'];
 
     public function challenge(){
 
@@ -19,6 +19,15 @@ class Submission extends Model
     public function participant(){
 
         return $this->belongsTo(Participant::class);
+    }
+
+    public function getFormattedLineNumbersAttribute()
+    {
+        if($this->line_number_from === $this->line_number_to) {
+            return $this->line_number_from;
+        } else {
+            return $this->line_number_from . '-' . $this->line_number_to;
+        }
     }
 
 }
