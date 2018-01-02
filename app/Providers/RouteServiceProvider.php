@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Challenge;
+use App\Participant;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
@@ -26,6 +28,15 @@ class RouteServiceProvider extends ServiceProvider
         //
 
         parent::boot();
+        $models = [
+            'challenge' => Challenge::class,
+            'participant' => Participant::class
+        ];
+
+        foreach ($models as $key => $model) {
+            Route::model($key, $model);
+        }
+
     }
 
     /**

@@ -20,7 +20,12 @@ Route::group(['middleware' => 'auth:participant'], function () {
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('/', 'Admin\HomeController@index')->name('admin_home');
+    Route::resources(['challenges' => 'Admin\ChallengeController']);
+    Route::resources(['submissions' => 'Admin\SubmissionController']);
+    Route::get('challenge/{challenge}/submission/particpant/{participant}', 'Admin\ChallengeController@submissions')->name('user_submissions');
+
 });
+
 
 // Authentication Admin Routes...
 Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm');
@@ -33,3 +38,4 @@ Route::get('login/{provider}/callback', 'Participant\Auth\LoginController@handle
 Route::get('login', 'Participant\Auth\LoginController@showLoginForm');
 Route::get('login/{provider}', 'Participant\Auth\LoginController@login')->name('social.redirect');
 Route::post('logout', 'Participant\Auth\LoginController@logout')->name('participant_logout');
+

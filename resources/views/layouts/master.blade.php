@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{{ mix('css/vendor.css') }}">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
@@ -77,8 +77,14 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
-                    <a href="#">
+                    <a href="/admin">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="{{route('challenges.index')}}">
+                        <i class="fa fa-file-code-o"></i> <span>Challenges</span>
 
                     </a>
                 </li>
@@ -101,34 +107,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <div class="callout callout-info">
-                <h4>Tip!</h4>
-
-                <p>Add the layout-boxed class to the body tag to get this layout. The boxed layout is helpful when working on
-                    large screens because it prevents the site from stretching very wide.</p>
-            </div>
-            <!-- Default box -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Title</h3>
-
-                    <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button>
-                    </div>
-                </div>
-                <div class="box-body">
-                    Start creating your amazing application!
-                </div>
-                <!-- /.box-body -->
-                <div class="box-footer">
-                    Footer
-                </div>
-                <!-- /.box-footer-->
-            </div>
-            <!-- /.box -->
+            @yield('content')
         </section>
         <!-- /.content -->
     </div>
