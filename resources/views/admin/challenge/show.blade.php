@@ -1,6 +1,6 @@
-@if(!isset($submission))
+@if($submissions->count() === 0)
     <div>
-        <p style="text-align: center">Geen Submisssions voor deze challenge</p>
+        <p class="text-center">No submissions found for this challenge</p>
     </div>
 
 @else
@@ -11,7 +11,7 @@
             <i class="fa fa-user-circle-o fa-3x" aria-hidden="true" style="margin-bottom: 5px;"></i>
             <p class="textWrap">{{$submission->participant->email}}</p>
             </a></div>
-@endforeach
+        @endforeach
     </div>
 
 @endif

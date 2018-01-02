@@ -87,11 +87,6 @@
                         <i class="fa fa-file-code-o"></i> <span>Challenges</span>
 
                     </a>
-                </li><li class="treeview">
-                    <a href="{{route('submissions.index')}}">
-                        <i class="fa fa-keyboard-o"></i> <span>Submissions</span>
-
-                    </a>
                 </li>
             </ul>
         </section>
