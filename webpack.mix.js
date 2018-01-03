@@ -67,13 +67,17 @@ mix.styles([
     'public/css/challenge.css',
     'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css',
     'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css',
+    'node_modules/prismjs/plugins/toolbar/prism-toolbar.css',
     'resources/assets/css/font-awesome.min.css',
 ], 'public/css/stb_bundle.css').version();
 
 mix.scripts([
     'node_modules/admin-lte/plugins/jQuery/jquery-*.min.js',
    'node_modules/prismjs/prism.js',
+    'node_modules/prismjs/plugins/autoloader/prism-autoloader.js',
+    'node_modules/prismjs/plugins/toolbar/prism-toolbar.js',
     'node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js',
     'node_modules/prismjs/plugins/line-highlight/prism-line-highlight.js',
-    'resources/assets/js/markText.js'
+    'resources/assets/js/markText.js',
+    'resources/assets/js/participant.js'
 ], 'public/js/vendor_stb.js').version();

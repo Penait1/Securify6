@@ -15,9 +15,7 @@
                 </div>
             </div>
             <pre id='preCode' class="line-numbers language-{{$challenge->programmingLanguage->name}}" data-line="{{$lineNumbers}}">
-                <code id='codeText' class="language-{{$challenge->programmingLanguage->name}}" >
-                    {{$challenge->content}}
-                </code>
+                <code id='codeText' class="language-{{$challenge->programmingLanguage->name}}">{{$challenge->content}}</code>
             </pre>
 
             <div class="row" style="padding: 20px">

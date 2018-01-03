@@ -12,12 +12,16 @@ class SubmissionController extends Controller
 {
     public function submit(Request $request, $challengeId)
     {
-        $challenge = Challenge::byId($challengeId);
+        $challenge = Challenge::findOrFail($challengeId);
         $participant = Participant::byEmail($request->user()->email);
 
         foreach ($request->comment as $comments) {
             $submission = new Submission;
-            $submission->fill(['comment' => $comments['value'], 'line_number' => $comments['line_from']]);
+            $submission->fill([
+                'comment' => $comments['value'],
+                'line_number_from' => $comments['line_from'],
+                'line_number_to' => $comments['line_end']
+            ]);
 
             $submission->participant()->associate($participant);
             $submission->challenge()->associate($challenge);

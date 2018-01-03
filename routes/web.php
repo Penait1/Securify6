@@ -14,7 +14,7 @@ Route::group(['middleware' => 'auth:participant'], function () {
     Route::get('/', 'Participant\HomeController@index')->name('participant_home');
     Route::get('/challenge/{id}', 'Participant\HomeController@challenge')->name('participant_challenge');
 
-    Route::post("/challenge/{id}/submit", "Participant\SubmissionController@submit");
+    Route::post("/challenge/{id}/submit", "Participant\SubmissionController@submit")->name('submit_submission');
 });
 
 

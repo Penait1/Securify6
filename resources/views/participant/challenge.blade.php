@@ -2,20 +2,18 @@
 
 @section('content')
     <div id="container">
-
-
-
         <div class="col-md-6" id="left">
             Challenge code:
-                <pre id='codeBlock' class="line-numbers" data-line="1"><code id='code' class="language-HTML">
-                        {{$challenges->content }}</code></pre>
+                <pre id='codeBlock' class="line-numbers language-{{$challenge->programmingLanguage->name}}" data-line="0">
+                    <code id='code' class="language-{{$challenge->programmingLanguage->name}}">{{$challenge->content }}</code>
+                </pre>
         </div>
         <div class="col-md-1" id="markDiv">
-            <input type="button" id="mark" onclick="copySelectionToTextView()" value="Mark">
+            <input type="button" id="mark" value="Mark" data-url="{{route('code_lines', [$challenge->id])}}">
         </div>
         <div class="col-md-5" id="right">
             Challenge submissions:
-            <form action="/submissions" id="form" method="post">
+            <form action="{{route('submit_submission', $challenge->id)}}" id="form" method="post">
                 {{ csrf_field() }}
                 <div id="comments">
 
