@@ -9,7 +9,7 @@
                 </pre>
         </div>
         <div class="col-md-1" id="markDiv">
-            <input type="button" id="mark" value="Mark" data-url="{{route('code_lines', [$challenge->id])}}">
+            <input type="button" id="mark" value="Mark">
         </div>
         <div class="col-md-5" id="right">
             Challenge submissions:
