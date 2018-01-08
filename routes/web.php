@@ -11,6 +11,7 @@
 |
 */
 Route::group(['middleware' => 'auth:participant'], function () {
+    Route::get("/challenge/thank-you", "Participant\SubmissionController@thanks")->name('submission_thanks');
     Route::get('/', 'Participant\HomeController@index')->name('participant_home');
     Route::get('/challenge/{id}', 'Participant\HomeController@challenge')->name('participant_challenge');
 

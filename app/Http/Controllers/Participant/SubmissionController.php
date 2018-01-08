@@ -13,6 +13,9 @@ class SubmissionController extends Controller
     public function submit(Request $request, $challengeId)
     {
         $challenge = Challenge::findOrFail($challengeId);
+
+        $this->authorize('update', $challenge);
+
         $participant = Participant::byEmail($request->user()->email);
 
         foreach ($request->comment as $comments) {
@@ -28,6 +31,12 @@ class SubmissionController extends Controller
 
             $submission->save();
         }
-        dd($request->user()->email);
+
+        return redirect(route('submission_thanks'));
+    }
+
+    public function thanks()
+    {
+        return view('participant.challenge.thanks');
     }
 }

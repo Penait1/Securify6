@@ -41,6 +41,10 @@
     <div class="content">
         @yield('content')
     </div>
+
+
+    {!! Form::open(['route' => 'participant_logout', 'id' => 'frm-logout']) !!}
+    {!! Form::close() !!}
 </div>
 
 <footer class="site-footer" >

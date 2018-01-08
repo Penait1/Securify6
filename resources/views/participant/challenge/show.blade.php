@@ -22,10 +22,4 @@
             </form>
         </div>
     </div>
-
-    <div class="links">
-
-        {!! Form::open(['route' => 'participant_logout', 'id' => 'frm-logout']) !!}
-        {!! Form::close() !!}
-    </div>
 @endsection

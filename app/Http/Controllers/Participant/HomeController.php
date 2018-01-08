@@ -20,12 +20,8 @@ class HomeController extends Controller
     public function challenge($id)
     {
         $challenge = Challenge::FindOrFail($id);
-        return view('participant.challenge', compact('challenge'));
-    }
-
-    public function submissions(Request $request)
-    {
-        dd($request->all());
+        $this->authorize('view', $challenge);
+        return view('participant.challenge.show', compact('challenge'));
     }
 
 }
