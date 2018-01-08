@@ -6,4 +6,8 @@ $( document ).ready(function() {
     });
 
     Prism.plugins.autoloader.languages_path = '/js/languages/';
+
+    $('.disabled').click(function(e){
+        e.preventDefault();
+    })
 });
