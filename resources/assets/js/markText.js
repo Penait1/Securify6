@@ -50,13 +50,22 @@ $( document ).ready(function() {
         var totalComments = $container.find('.comment').length;
         var prototypeId = lineFrom.toString() + lineTo.toString();
 
-        var prototype = "<div id='" + prototypeId + "'><a href='#codeBlock." +lastElement +"'>Line number(s):" + lastElement +"</a><textarea class='comment' name='comment[" + totalComments + "][value]'> </textarea>";
+        var prototype = "<div id='" + prototypeId + "'><a href='#codeBlock." +lastElement +"'>Line number(s):" + getPrettyLines(lastElement) +"</a><textarea class='comment' name='comment[" + totalComments + "][value]'> </textarea>";
         prototype += "<input type='hidden' name='comment[" + totalComments + "][line_from]' value='" + lineFrom + "'/>";
         prototype += "<input type='hidden' name='comment[" + totalComments + "][line_end]' value='" + lineTo + "'/></div>";
 
         $container.append(prototype);
     });
 });
+
+function getPrettyLines(lines) {
+    if(isNaN(Number(lines))) { // code block detected
+        var subElements = lines.split('-');
+        return (Number(subElements[0]) - 1) + " - "  + (Number(subElements[1]) - 1);
+    } else {
+        return Number(lines) - 1;
+    }
+}
 
 function getBeginLine(elements) { // gets the begin line by detecting if code block or not
     var element = elements[elements.length - 1];
