@@ -26,8 +26,8 @@ class AdminStoreChallenge extends FormRequest
         return [
             'name'                  => 'required|max:191',
             'language_id'           => 'required|exists:programming_languages,id',
-            'content'               => 'required|max:2000',
-            'description'           => 'required|max:50',
+            'content'               => 'required',
+            'description'           => 'required',
             'starting_at'           => 'required|date',
             'ending_at'             => 'required|date|after:starting_at'
 
